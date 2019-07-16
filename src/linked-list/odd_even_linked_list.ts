@@ -19,7 +19,7 @@ Note:
     The first node is considered odd, the second node even and so on ...
  */
 
-import { ListNode } from './ListNode';
+import { ListNode } from '../DataType/ListNode';
 import { LinkedList } from './LinkedList';
 /**
  * 

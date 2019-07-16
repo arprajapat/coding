@@ -1,4 +1,4 @@
-import { TreeNode } from "./TreeNode";
+import { TreeNode } from "../DataType/TreeNode";
 
 export const main = (inorder: number[], postorder: number[]) => {
     return buildTree(postorder, inorder, 0, postorder.length-1, 0, inorder.length-1) 

@@ -1,4 +1,4 @@
-import { TreeNode } from './TreeNode';
+import { TreeNode } from '../DataType/TreeNode';
 // import { main as BST } from './../tree/sorted_array_to_BST';
 
 const main = <T>(root: TreeNode<T>): void => {

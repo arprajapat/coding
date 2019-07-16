@@ -1,4 +1,4 @@
-import { TreeNode } from './TreeNode'
+import { TreeNode } from '../DataType/TreeNode'
 
 export const main = (arr: number[]) => {
     return constructTree(arr, 0, arr.length-1);

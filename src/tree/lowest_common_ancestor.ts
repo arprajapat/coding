@@ -1,4 +1,4 @@
-import { TreeNode } from "./TreeNode";
+import { TreeNode } from "../DataType/TreeNode";
 
 export const main = <T>(root: TreeNode<T>, p: TreeNode<T>, q: TreeNode<T>): TreeNode<T> => {
     return lowestCommonAncestor(root, p, q);

@@ -1,4 +1,4 @@
-import { ListNode } from './ListNode';
+import { ListNode } from '../DataType/ListNode';
 
 export class LinkedList<T> {
     public head: ListNode<T>;
