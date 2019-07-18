@@ -21,24 +21,49 @@ Output: -1
 
  */
 
-const main = (arr: number[], target: number) => {
+export const main = (arr: number[], target: number) => {
     const len = arr.length;
-    return search(arr, target, 0, len-1);
+    const rotatedIndex = findRotation(arr)
+
+    if(rotatedIndex == 0 || (target >= arr[rotatedIndex] && target <= arr[len-1])) {
+        return binarySearch(arr, target, rotatedIndex, len-1); 
+    }
+    else {
+        return binarySearch(arr, target, 0, rotatedIndex-1); 
+    }
 }
 
-const search = (arr: number[], target: number, start: number, end: number) => {
+const binarySearch = (arr: number[], target: number, start: number, end: number) => {
     if(start>end) return -1;
 
     const mid = Math.floor((start+end)/2);
-    if(arr[mid]===target)
+    if(arr[mid] == target)
         return mid;
-    else if(arr[start] <= target && target < arr[mid]) {
-        return search(arr, target, start, mid-1);
+    if(target > arr[mid]) {
+        return binarySearch(arr, target, mid+1, end);
     }
     else {
-        return search(arr, target, mid+1, end);
-    } 
+        return binarySearch(arr, target, start, mid-1);
+    }
 }
 
-console.log(main([4,5,6,7,0,1,2], 3))
+const findRotation = (arr: number[]) => {
+    if(arr.length == 0) return -1
+    let start = 0;
+    let end = arr.length-1;
+    while(start<end) {
+        const mid = Math.floor((start+end)/2);
+        if(arr[mid]>arr[end]) {
+            start = mid+1;
+        }
+        else {
+            end = mid;
+        }
+    }
+    return start;
+}
+
+console.log(main([4,5,6,7,0,1,2], 4))
 console.log(main([4,5,6,7,0,1,2], 0))
+console.log(main([5,1,3], 5))
+console.log(main([6,7,1,2,3,4,5], 6))
