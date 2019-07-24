@@ -34,7 +34,7 @@ const bruteForce = (s: string, t: string) => {
     let res: string = '';
     let start: number = 0;
 
-    while(start < s.length-3) {
+    while(start < s.length) {
         let j = 0;
         for (let i = start; i < s.length; i++) {
             if(t[j] ==  s[i] && j == 0) {
